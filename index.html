@@ -99,6 +99,37 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="dist/main.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.571.0.min.js"></script>
+
+
+    <script lang="javascript">
+        // Set the region where your identity pool exists (us-east-1, eu-west-1)
+        //AWS.config.region = 'us-east-2';
+        AWS.config.region = 'eu-central-1';
+
+        // Configure the credentials provider to use your identity pool
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            IdentityPoolId: 'eu-central-1:30123c8f-b828-4ad1-8c08-334bd817652e'
+            // Logins: { // optional tokens, used for authenticated login
+            //     'graph.facebook.com': 'FBTOKEN',
+            //     'www.amazon.com': 'AMAZONTOKEN',
+            //     'accounts.google.com': 'GOOGLETOKEN'
+            // }
+        });
+
+        // Make the call to obtain credentials
+        AWS.config.credentials.get(function(){
+
+            // Credentials will be available when this function is called.
+            var accessKeyId = AWS.config.credentials.accessKeyId;
+            var secretAccessKey = AWS.config.credentials.secretAccessKey;
+            var sessionToken = AWS.config.credentials.sessionToken;
+
+            console.log(secretAccessKey);
+
+        });
+    </script>
+    
 </body>
 
 </html>
