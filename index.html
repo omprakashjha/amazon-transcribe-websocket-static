@@ -103,6 +103,12 @@
 
 
     <script lang="javascript">
+
+        $.urlParam = function(name){
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results[1] || 0;
+        }
+
         // Set the region where your identity pool exists (us-east-1, eu-west-1)
         //AWS.config.region = 'us-east-2';
         AWS.config.region = 'eu-central-1';
@@ -113,9 +119,9 @@
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
             IdentityPoolId: 'eu-central-1:30123c8f-b828-4ad1-8c08-334bd817652e',
             Logins: { // optional tokens, used for authenticated login
-                'graph.facebook.com': FBTOKEN,
-                'www.amazon.com': 'AMAZONTOKEN',
-                'accounts.google.com': 'GOOGLETOKEN'
+                'graph.facebook.com': FBTOKEN
+                // 'www.amazon.com': 'AMAZONTOKEN',
+                // 'accounts.google.com': 'GOOGLETOKEN'
             }
         });
 
@@ -139,11 +145,6 @@
             
 
         });
-
-        $.urlParam = function(name){
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        return results[1] || 0;
-    }
         
     </script>
     
