@@ -28,12 +28,12 @@
         <div class="row" style="display:none">
             <div class="col">
                 <label>Access ID:</label>
-                <input type="password" id="access_id" placeholder="ACCESS ID" value="" />
+                <input type="hidden" id="access_id" placeholder="ACCESS ID" value="" />
 
                 <label>Secret Key:</label>
-                <input type="password" id="secret_key" placeholder="SECRET KEY" value="" />
+                <input type="hidden" id="secret_key" placeholder="SECRET KEY" value="" />
                 <label>Session Token (if using MFA):</label>
-                <input type="password" id="session_token" placeholder="SESSION TOKEN" value="" />
+                <input type="hidden" id="session_token" placeholder="SESSION TOKEN" value="" />
             </div>
             <div class="col">
                 <label>Language: </label>
@@ -125,7 +125,9 @@
             var secretAccessKey = AWS.config.credentials.secretAccessKey;
             var sessionToken = AWS.config.credentials.sessionToken;
 
+            console.log(accessKeyId);
             console.log(secretAccessKey);
+            console.log(sessionToken);
 
             $('#access_id').val(accessKeyId);
             $('#secret_key').val(secretAccessKey);
