@@ -109,12 +109,12 @@
 
         // Configure the credentials provider to use your identity pool
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: 'eu-central-1:30123c8f-b828-4ad1-8c08-334bd817652e'
-            // Logins: { // optional tokens, used for authenticated login
-            //     'graph.facebook.com': 'FBTOKEN',
-            //     'www.amazon.com': 'AMAZONTOKEN',
-            //     'accounts.google.com': 'GOOGLETOKEN'
-            // }
+            IdentityPoolId: 'eu-central-1:30123c8f-b828-4ad1-8c08-334bd817652e',
+            Logins: { // optional tokens, used for authenticated login
+                'graph.facebook.com': 'FBTOKEN',
+                'www.amazon.com': 'AMAZONTOKEN',
+                'accounts.google.com': 'GOOGLETOKEN'
+            }
         });
 
         // Make the call to obtain credentials
@@ -128,6 +128,8 @@
             console.log(accessKeyId);
             console.log(secretAccessKey);
             console.log(sessionToken);
+            console.log('code:');
+            console.log($.urlParam('code'));
 
             $('#access_id').val(accessKeyId);
             $('#secret_key').val(secretAccessKey);
@@ -135,6 +137,12 @@
             
 
         });
+
+        $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+    }
+        
     </script>
     
 </body>
