@@ -3,6 +3,10 @@ body {
     background-color: lightblue;
 }
 
+h1 {
+    text-align: center;
+}
+
 #transcript {
     margin: 30px 0;
     white-space: pre-wrap;
@@ -45,6 +49,7 @@ body {
 
 .small-caps {
     font-variant: small-caps;
+    text-align: center;
 }
 
 #transcript {
