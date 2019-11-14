@@ -12,16 +12,16 @@
 <body>
     <div class="container">
         <h1>
-            Real-time Audio Transcription
+            Let's Talk!
         </h1>
         <p class="small-caps">
-            Using the <a href="https://aws.amazon.com/transcribe/">Amazon Transcribe</a> WebSocket API
+            Real time audio transcription
         </p>
         <hr/>
-        <p>
+        <!-- <p>
             Create an <a href="https://aws.amazon.com/free/">AWS Account</a>, attach the necessary <a
                 href="policy.json"> IAM policy</a>, and enter your Access Id and Secret Key below.
-        </p>
+        </p> -->
 
         <div id="error" class="isa_error"></div>
 
@@ -63,7 +63,7 @@
                 </select>
             </div>
         </div>
-        <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="5"
+        <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="15"
             readonly="readonly"></textarea>
         <div class="row">
             <div class="col">
@@ -77,11 +77,11 @@
                     Clear Transcript
                 </button>
             </div>
-            <div class="col">
+            <!-- <div class="col">
                 <a class="float-right" href="https://aws.amazon.com/free/" aria-label="Amazon Web Services">
                     <img id="logo" src="AWS_logo_RGB.png" alt="AWS Logo" />
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 

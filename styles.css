@@ -1,5 +1,6 @@
 body {
     margin: 20px;
+    background-color: lightblue;
 }
 
 #transcript {
@@ -44,4 +45,9 @@ body {
 
 .small-caps {
     font-variant: small-caps;
+}
+
+#transcript {
+    background-color: steelblue;
+    color: white;
 }
